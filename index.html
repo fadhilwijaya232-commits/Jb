@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panel Pterodactyl Bot WhatsApp | Garansi 30 Hari</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap');
+
+:root {
+  --bg-dark: #05010d;
+  --bg-purple: #1e0b35;
+  --accent1: #9333ea;
+  --accent2: #4f46e5;
+  --text: #f1f5f9;
+  --glass: rgba(30, 20, 50, 0.5);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--bg-dark);
+  color: var(--text);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Animated gradient background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 30% 20%, rgba(147, 51, 234, 0.4) 0%, transparent 50%),
+              radial-gradient(circle at 70% 80%, rgba(79, 70, 229, 0.4) 0%, transparent 50%);
+  animation: pulse 8s ease-in-out infinite;
+  z-index: 0;
+}
+
+@keyframes pulse {
+ 0%, 100% { opacity: 1; transform: scale(1); }
+ 50% { opacity: 0.8; transform: scale(1.1); }
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 20px;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #c084fc, #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 40px rgba(147, 51, 234, 0.6));
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  color: #94a3b8;
+  margin-bottom: 20px;
+}
+
+.tag {
+  display: inline-block;
+  background: linear-gradient(90deg, rgba(147, 51, 234, 0.3), rgba(79, 70, 229, 0.3));
+  border: 1px solid var(--accent1);
+  padding: 10px 25px;
+  border-radius: 100px;
+  font-weight: 600;
+  box-shadow: 0 0 30px rgba(147, 51, 234, 0.5);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-bottom: 80px;
+}
+
+.card {
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(147, 51, 234, 0.4);
+  border-radius: 24px;
+  padding: 35px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 60px rgba(147, 51, 234, 0.4);
+  border-color: var(--accent1);
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  font-size: 1.4rem;
+  color: #c084fc;
+  margin-bottom: 12px;
+}
+
+.pricing-box {
+  background: var(--glass);
+  backdrop-filter: blur(15px);
+  border: 2px solid var(--accent1);
+  border-radius: 30px;
+  padding: 60px 40px;
+  text-align: center;
+  box-shadow: 0 0 80px rgba(147, 51, 234, 0.4);
+}
+
+.price-tag {
+  font-size: 4rem;
+  font-weight: 800;
+  color: #fff;
+  margin: 25px 0;
+}
+
+.price-tag small {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #94a3b8;
+}
+
+.guarantee-badge {
+  background: linear-gradient(90deg, rgba(147, 51, 234, 0.4), rgba(79, 70, 229, 0.4));
+  padding: 18px;
+  border-radius: 15px;
+  margin: 30px 0;
+  border: 1px solid var(--accent1);
+  font-weight: 600;
+}
+
+.btn-whatsapp {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--accent1), var(--accent2));
+  color: white;
+  padding: 20px 50px;
+  border-radius: 100px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 40px rgba(147, 51, 234, 0.6);
+}
+
+.btn-whatsapp:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 15px 50px rgba(147, 51, 234, 0.8);
+}
+
+.features-list {
+  list-style: none;
+  max-width: 600px;
+  margin: 35px auto;
+  text-align: left;
+}
+
+.features-list li {
+  padding: 12px 0 12px 35px;
+  position: relative;
+  font-size: 1.1rem;
+}
+
+.features-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 12px;
+  width: 24px;
+  height: 24px;
+  background: var(--accent1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: white;
+}
+
+footer {
+  text-align: center;
+  margin-top: 80px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(147, 51, 234, 0.2);
+  opacity: 0.6;
+}
+
+@media (max-width: 768px) {
+  .hero h1 { font-size: 2.5rem; }
+  .price-tag { font-size: 3rem; }
+  .pricing-box { padding: 40px 25px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <section class="hero">
+    <h1>PANEL PTERODACTYL</h1>
+    <p>Panel Bot WhatsApp Premium - Cepat, Stabil, Anti Lag</p>
+    <div class="tag">🔥 Garansi Awet 1 Bulan Penuh</div>
+  </section>
+
+  <section class="grid">
+    <div class="card">
+      <div class="card-icon">⚡</div>
+      <h3>Server High Speed</h3>
+      <p>CPU & RAM dedicated. Bot jalan 24/7 tanpa lemot. Cocok buat script berat.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🛡️</div>
+      <h3>Uptime 99.9%</h3>
+      <p>Panel jarang down. Kalau ada masalah, langsung diganti tanpa nambah biaya.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🎮</div>
+      <h3>Full Control Panel</h3>
+      <p>Akses penuh Pterodactyl. Install script, restart, cek log semua bisa sendiri.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">💬</div>
+      <h3>Support 24/7</h3>
+      <p>Admin fast response. Bantu setup dari nol sampai bot jalan lancar.</p>
+    </div>
+  </section>
+
+  <section class="pricing-box">
+    <h2>Harga Panel Bot WhatsApp</h2>
+    <div class="price-tag">Rp 4.000 - Rp 14.000<small>/ 30 Hari</small></div>
+    
+    <div class="guarantee-badge">
+      ✅ GARANSI 100% - Panel aktif 30 hari penuh. Mati sebelum waktu? Ganti gratis!
+    </div>
+
+    <ul class="features-list">
+      <li>RAM 4GB - Unlimited, SSD High Speed (loading cepat)</li>
+      <li>Unlimited Bandwidth & Slot</li>
+      <li>Free Setup Panel + Node</li>
+      <li>Support semua script bot WhatsApp</li>
+      <li>Backup otomatis setiap minggu</li>
+      <li>Anti Ddos Protection</li>
+    </ul>
+
+    <a href="https://wa.me/6283183117616" class="btn-whatsapp" target="_blank">
+      Order Sekarang via WhatsApp
+    </a>
+    
+    <p style="margin-top: 25px; color: #94a3b8;">
+      WhatsApp: 6283183117616
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2026 Panel Pterodactyl ID. Terpercaya & Aman | All Rights Reserved</p>
+  </footer>
+</div>
+</body>
+</html>
